@@ -1,0 +1,17 @@
+{
+  "employees": [
+    { "name": "馬鈴薯", "speed": 7 },
+    { "name": "西羅摩", "speed": 5 },
+    { "name": "阿比", "speed": 3 },
+    { "name": "巧克力", "speed": 10 },
+    { "name": "泰迪", "speed": 8 }
+  ],
+  "actions": [
+    { "title": "信用卡業務", "workload": 30 },
+    { "title": "存款業務", "workload": 10 },
+    { "title": "貸款業務", "workload": 120 },
+    { "title": "保險業務", "workload": 80 },
+    { "title": "基金．投資", "workload": 140 },
+    { "title": "財富管理", "workload": 200 }
+  ]
+}

@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+import './bank.scss';
+import Bank from './Bank';
 import reportWebVitals from './reportWebVitals';
+import metadata from './metadata.json';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Bank
+      actions={metadata.actions}
+      employees={metadata.employees}
+    />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
