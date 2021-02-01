@@ -1,7 +1,8 @@
 import React, { useCallback, useMemo } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Fab from '@material-ui/core/Fab';
 import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import Badge from '@material-ui/core/Badge';
+import Fab from '@material-ui/core/Fab';
 import QueueOutlinedIcon from '@material-ui/icons/QueueOutlined';
 
 const useStyles = makeStyles((theme) => ({
@@ -11,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   wrapper: {
     position: 'fixed',
     right: theme.spacing(2),
-    bottom: theme.spacing(3),
+    bottom: theme.spacing(5),
   },
 }));
 
@@ -30,12 +31,14 @@ export default function TicketMachine({
   return (
     <Fab
       className={classes.wrapper}
-      onClick={dispatcher}
       color="primary"
+      onClick={dispatcher}
       variant="extended"
     >
-      <QueueOutlinedIcon className={classes.icon} />
-      {`等待人數 ${waitings}，下一個號碼 ${next}`}
+      <Badge badgeContent={waitings} color="secondary">
+        <QueueOutlinedIcon className={classes.icon} />
+      </Badge>
+      {`下一個號碼 ${next}`}
     </Fab>
   );
 }
@@ -45,7 +48,7 @@ TicketMachine.propTypes = {
     title: PropTypes.string.isRequired,
     workload: PropTypes.number.isRequired,
   })).isRequired,
-  onClick: PropTypes.func.isRequired,
   next: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
   waitings: PropTypes.number.isRequired,
 };
