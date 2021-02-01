@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "https://o-p.github.io/bank-counter/static/css/main.b9a68e6c.chunk.css",
-    "main.js": "https://o-p.github.io/bank-counter/static/js/main.ce191383.chunk.js",
-    "main.js.map": "https://o-p.github.io/bank-counter/static/js/main.ce191383.chunk.js.map",
-    "runtime-main.js": "https://o-p.github.io/bank-counter/static/js/runtime-main.e2b46a9e.js",
-    "runtime-main.js.map": "https://o-p.github.io/bank-counter/static/js/runtime-main.e2b46a9e.js.map",
-    "static/js/2.75a3fb47.chunk.js": "https://o-p.github.io/bank-counter/static/js/2.75a3fb47.chunk.js",
-    "static/js/2.75a3fb47.chunk.js.map": "https://o-p.github.io/bank-counter/static/js/2.75a3fb47.chunk.js.map",
-    "static/js/3.6755b7a5.chunk.js": "https://o-p.github.io/bank-counter/static/js/3.6755b7a5.chunk.js",
-    "static/js/3.6755b7a5.chunk.js.map": "https://o-p.github.io/bank-counter/static/js/3.6755b7a5.chunk.js.map",
+    "main.js": "https://o-p.github.io/bank-counter/static/js/main.c90c8be3.chunk.js",
+    "main.js.map": "https://o-p.github.io/bank-counter/static/js/main.c90c8be3.chunk.js.map",
+    "runtime-main.js": "https://o-p.github.io/bank-counter/static/js/runtime-main.874363b6.js",
+    "runtime-main.js.map": "https://o-p.github.io/bank-counter/static/js/runtime-main.874363b6.js.map",
+    "static/js/2.67b14307.chunk.js": "https://o-p.github.io/bank-counter/static/js/2.67b14307.chunk.js",
+    "static/js/2.67b14307.chunk.js.map": "https://o-p.github.io/bank-counter/static/js/2.67b14307.chunk.js.map",
+    "static/js/3.07ee37ac.chunk.js": "https://o-p.github.io/bank-counter/static/js/3.07ee37ac.chunk.js",
+    "static/js/3.07ee37ac.chunk.js.map": "https://o-p.github.io/bank-counter/static/js/3.07ee37ac.chunk.js.map",
     "index.html": "https://o-p.github.io/bank-counter/index.html",
     "static/css/main.b9a68e6c.chunk.css.map": "https://o-p.github.io/bank-counter/static/css/main.b9a68e6c.chunk.css.map",
-    "static/js/2.75a3fb47.chunk.js.LICENSE.txt": "https://o-p.github.io/bank-counter/static/js/2.75a3fb47.chunk.js.LICENSE.txt",
+    "static/js/2.67b14307.chunk.js.LICENSE.txt": "https://o-p.github.io/bank-counter/static/js/2.67b14307.chunk.js.LICENSE.txt",
     "static/media/bank.3bfe423a.png": "https://o-p.github.io/bank-counter/static/media/bank.3bfe423a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.e2b46a9e.js",
-    "static/js/2.75a3fb47.chunk.js",
+    "static/js/runtime-main.874363b6.js",
+    "static/js/2.67b14307.chunk.js",
     "static/css/main.b9a68e6c.chunk.css",
-    "static/js/main.ce191383.chunk.js"
+    "static/js/main.c90c8be3.chunk.js"
   ]
 }
