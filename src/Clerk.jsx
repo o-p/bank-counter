@@ -1,19 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
+import Checkbox from '@material-ui/core/Checkbox';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 
-function CircularProgressWithLabel({ value, label }) {
+const size = 48;
+
+function CircularProgressWithLabel({
+  label,
+  show,
+  value,
+}) {
   return (
-    <Box position="relative" display="inline-flex">
-      <CircularProgress
-        variant="determinate"
-        value={value}
-      />
+    <Box position="relative" display="inline-flex" width={size} height={size}>
+      {
+        show && (
+          <CircularProgress
+            variant="determinate"
+            value={value}
+            size={size}
+            color={value >= 100 ? 'primary' : 'secondary'}
+          />
+        )
+      }
       <Box
         top={0}
         left={0}
@@ -37,14 +51,17 @@ function CircularProgressWithLabel({ value, label }) {
 }
 
 CircularProgressWithLabel.propTypes = {
-  value: PropTypes.number.isRequired,
   label: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  show: PropTypes.bool.isRequired,
 };
 
 export default function Clerk({
+  actionItem,
+  active,
   employee,
   onDone,
-  actionItem,
+  onToggle,
 }) {
   const [served, setServed] = useState([]);
   const [progress, setProgress] = useState(0);
@@ -65,18 +82,21 @@ export default function Clerk({
     setProgress(0);
   }
 
+  const checkboxOnChange = useCallback(() => onToggle(!active), [active, onToggle]);
+
   let value;
   if (actionItem) {
     const { workload } = actionItem.action;
-    value = Math.max(0, (progress * 100) / workload).toFixed(1);
+    value = Math.min(100, Math.max(0, (progress * 100) / workload));
   }
 
   return (
     <ListItem>
       <ListItemAvatar>
         <CircularProgressWithLabel
-          value={value}
           label={employee.name}
+          value={value}
+          show={actionItem}
         />
       </ListItemAvatar>
       <ListItemText
@@ -87,16 +107,27 @@ export default function Clerk({
           `已處理案件： ${served.join(', ')}`
         }
       />
+      <ListItemSecondaryAction>
+        <Checkbox
+          edge="end"
+          onChange={checkboxOnChange}
+          checked={active}
+          disabled={actionItem}
+        />
+      </ListItemSecondaryAction>
     </ListItem>
   );
 }
 
 Clerk.propTypes = {
+  active: PropTypes.bool.isRequired,
   employee: PropTypes.shape({
     name: PropTypes.string,
     speed: PropTypes.number,
   }).isRequired,
   onDone: PropTypes.func.isRequired,
+  onToggle: PropTypes.func.isRequired,
+
   actionItem: PropTypes.shape({
     id: PropTypes.number.isRequired,
     action: PropTypes.shape({

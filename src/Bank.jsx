@@ -75,6 +75,12 @@ export default function Bank({ employees, actions }) {
     ...clerks.slice(i + 1),
   ]);
 
+  const handleTogger = (i) => (active) => setClerks([
+    ...clerks.slice(0, i),
+    { ...clerks[i], active },
+    ...clerks.slice(i + 1),
+  ]);
+
   const [remainTickets, nextClerks] = dispatchTicketsToClerks(
     tickets,
     clerks,
@@ -100,8 +106,10 @@ export default function Bank({ employees, actions }) {
                 <Clerk
                   key={clerk.employee.name}
                   actionItem={clerk.actionItem}
+                  active={clerk.active}
                   employee={clerk.employee}
                   onDone={handleActionDone(index)}
+                  onToggle={handleTogger(index)}
                 />
               ),
             )
